@@ -1,0 +1,19 @@
+{
+  "name": "twitter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonruizmora/twitter.git"
+  },
+  "author": "brandonruizmora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandonruizmora/twitter/issues"
+  },
+  "homepage": "https://github.com/brandonruizmora/twitter#readme"
+}
