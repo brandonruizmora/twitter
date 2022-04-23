@@ -23,4 +23,14 @@ describe('UserService unit test', () => {
         expect(userUpdatedInfo.name).toBe('Brandon');
         expect(userUpdatedInfo.bio).toBe('Sin bio');
     });
+    test('Requerimiento 4: static method getAllUsernames', () => {
+        const userList = [];
+        for (let index = 0; index < 3; index++) {
+            const user = UserService.create(1, `pandaimpetuoso${index}`, 'Brandon');
+            userList.push(user);
+        }
+        const usernameList = UserService.getAllUsernames(userList); 
+        expect(usernameList).toContain('pandaimpetuoso0');
+        expect(usernameList).toEqual(userList.map(user => user.username));
+    });
 });
