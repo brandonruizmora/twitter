@@ -4,6 +4,14 @@ class UserView {
             return {
                 error: 'payload no existe'
             }
+        } else if (typeof payload.id !== 'number' || typeof payload.username !== 'string' || typeof payload.name !== 'string') {
+            return {
+                error: 'necesitan tener un valor válido'
+            }
+        } else {
+            return {
+                success: 'Usuario creado satisfactoriamente'
+            }
         }
     }
 }
