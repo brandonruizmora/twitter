@@ -22,4 +22,14 @@ describe('UserView unit test', () => {
         expect(result2.error).toMatch(/necesitan tener un valor válido/);
         expect(result3.error).toMatch(/necesitan tener un valor válido/);
     });
+    test('Requerimiento 4: Verify that user is created', () => {
+        const payload = {username: 'panda', name: 'brandon', id: 1}
+        const result = UserView.createUser(payload);
+        expect(result.id).toBe(1);
+        expect(result.username).toBe('panda');
+        expect(result.name).toBe('brandon');
+        expect(result.bio).not.toBeUndefined();
+        expect(result.dateCreated instanceof Date).toBe(true);
+        expect(result.lastUpdated instanceof Date).toBe(true);
+    });
 });
