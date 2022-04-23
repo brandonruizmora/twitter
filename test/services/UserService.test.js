@@ -15,4 +15,12 @@ describe('UserService unit test', () => {
         expect(userInfoList[2]).toBe('Brandon');
         expect(userInfoList[3]).not.toBeUndefined();
     });
+    test('Requerimiento 3: static method updateUserUsername', () => {
+        const user = UserService.create(1, 'pandaimpetuoso7', 'Brandon');
+        const userUpdatedInfo = UserService.updateUserUsername(user, 'Pandita7');
+        expect(userUpdatedInfo.id).toBe(1);
+        expect(userUpdatedInfo.username).toBe('Pandita7');
+        expect(userUpdatedInfo.name).toBe('Brandon');
+        expect(userUpdatedInfo.bio).toBe('Sin bio');
+    });
 });

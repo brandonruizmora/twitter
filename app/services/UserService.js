@@ -6,6 +6,9 @@ class UserService {
     static getInfo(user) {
         return [user.id, user.username, user.name, user.bio]
     }
+    static updateUserUsername(user, username) {
+        return new User(user.id, username, user.name, user.bio);
+    }
 }
 
 module.exports = UserService;
