@@ -1,10 +1,18 @@
 const UserService = require('../../app/services/UserService');
 describe('UserService unit test', () => {
     test('Requerimiento 1: Crear un nuevo usuario con la clase UserService', () => {
-        const usuario = UserService.create(1, 'pandaimpetuoso7', 'Brandon');
-        expect(usuario.id).toBe(1);
-        expect(usuario.username).toBe('pandaimpetuoso7');
-        expect(usuario.name).toBe('Brandon');
-        expect(usuario.bio).not.toBeUndefined();
+        const user = UserService.create(1, 'pandaimpetuoso7', 'Brandon');
+        expect(user.id).toBe(1);
+        expect(user.username).toBe('pandaimpetuoso7');
+        expect(user.name).toBe('Brandon');
+        expect(user.bio).not.toBeUndefined();
+    });
+    test('Requerimiento 2: static method getInfo', () => {
+        const user = UserService.create(1, 'pandaimpetuoso7', 'Brandon');
+        const userInfoList = UserService.getInfo(user);
+        expect(userInfoList[0]).toBe(1);
+        expect(userInfoList[1]).toBe('pandaimpetuoso7');
+        expect(userInfoList[2]).toBe('Brandon');
+        expect(userInfoList[3]).not.toBeUndefined();
     });
 });
